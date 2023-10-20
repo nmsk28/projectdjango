@@ -5,11 +5,8 @@ class Author(models.Model):
     name = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     email = models.EmailField()
-    biography = models.TextField(blank=True)
-    birthday = models.DateField()
-
-    def __str__(self):
-        return f'Name: {self.name},lastname: {self.lastname}, email: {self.email}, biography: {self.biography}, birthday: {self.birthday}'
+    biography =
+    birthday =
 
 
 class Post(models.Model):
