@@ -20,6 +20,7 @@ class Post(models.Model):
     def __str__(self):
         return f'Title is {self.title}'
 
+
 class Article(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
@@ -31,3 +32,11 @@ class Article(models.Model):
 
     def __str__(self):
         return f'Title is {self.title}'
+
+
+class Comment(models.Model):
+    author_id = models.ForeignKey(Author, on_delete=models.CASCADE)
+    article_id = models.ForeignKey(Article, on_delete=models.CASCADE)
+    content = models.CharField(max_length=300)
+    publication_date = models.DateField(auto_now_add=True)
+    change_at = models.DateField(auto_now_add=True)
